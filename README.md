@@ -9,5 +9,6 @@
 ## Execute
 
 ```test
+cargo build --example ${file_name}
 cargo run --example ${file_name}
 ```
