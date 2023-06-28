@@ -1,5 +1,9 @@
 # linux-practice-with-rust
 
+## Github
+
+[linux-in-practice-2nd](https://github.com/satoru-takeuchi/linux-in-practice-2nd)
+
 ## Reference
 
 * 試して理解 Linuxのしくみ
