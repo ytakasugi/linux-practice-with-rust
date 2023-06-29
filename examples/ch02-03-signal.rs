@@ -12,7 +12,7 @@ fn main() -> Result<(), Error> {
         match term.load(Ordering::Relaxed) {
             0 => (),
             SIGINT_U => (),
-            _ => unreachable!()
+            _ => unreachable!(),
         }
     }
 }

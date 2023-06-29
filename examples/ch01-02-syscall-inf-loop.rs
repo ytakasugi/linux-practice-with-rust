@@ -1,5 +1,5 @@
 fn main() {
-   loop {
-       nix::unistd::getppid();
-   } 
+    loop {
+        nix::unistd::getppid();
+    }
 }

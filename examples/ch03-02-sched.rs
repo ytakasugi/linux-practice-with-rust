@@ -16,7 +16,7 @@ enum SchedError {
 
 fn estimate_loops_per_msec() -> u128 {
     let start = time::Instant::now();
-    
+
     for _ in 0..NLOOP_FOR_ESTIMATION {}
 
     let end = time::Instant::now();
@@ -32,7 +32,7 @@ fn child_fn(n: usize, nloop: u128, start: time::Instant) {
         progress[i] = Some(time::Instant::now());
     }
     let mut f = File::create(format!("{}.data", n)).expect("create file failed");
-    
+
     #[allow(clippy::needless_range_loop)]
     for i in 0..100 {
         writeln!(
@@ -48,7 +48,7 @@ fn child_fn(n: usize, nloop: u128, start: time::Instant) {
 
 fn main() -> Result<(), SchedError> {
     let args: Vec<String> = std::env::args().collect();
-    
+
     if args.len() < 2 {
         println!("引数が不足しています");
         return Err(SchedError::FewArguments(args.len()));
@@ -69,7 +69,7 @@ fn main() -> Result<(), SchedError> {
     let nloop_per_msec = estimate_loops_per_msec();
 
     let start = time::Instant::now();
-    
+
     for i in 0..concurrency {
         match unsafe { fork() } {
             Ok(ForkResult::Parent { .. }) => (),

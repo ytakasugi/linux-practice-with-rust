@@ -1,12 +1,6 @@
 use nix::{
     sys::wait::waitpid,
-    unistd::{
-        fork,
-        ForkResult,
-        getppid,
-        getpid, 
-        execve
-    }
+    unistd::{execve, fork, getpid, getppid, ForkResult},
 };
 use std::ffi::CString;
 

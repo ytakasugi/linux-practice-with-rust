@@ -1,11 +1,6 @@
 use nix::{
     sys::wait::waitpid,
-    unistd::{
-        fork,
-        ForkResult,
-        getppid,
-        getpid
-    }
+    unistd::{fork, getpid, getppid, ForkResult},
 };
 
 fn main() {
@@ -19,9 +14,13 @@ fn main() {
         }
         // 子プロセス
         Ok(ForkResult::Child) => {
-            println!("子プロセス: pid={}, 親プロセスのpid={}", getpid(), getppid());
+            println!(
+                "子プロセス: pid={}, 親プロセスのpid={}",
+                getpid(),
+                getppid()
+            );
             unsafe { libc::_exit(0) };
         }
-        Err(_) => unsafe { libc::_exit(1) }
-    } 
+        Err(_) => unsafe { libc::_exit(1) },
+    }
 }
