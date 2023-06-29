@@ -20,8 +20,9 @@ fn main() {
             ProtFlags::PROT_READ | ProtFlags::PROT_WRITE,
             MapFlags::MAP_ANON | MapFlags::MAP_PRIVATE,
             -1,
-            0
-        ).expect("mmap failed")      
+            0,
+        )
+        .expect("mmap failed")
     };
 
     println!("新規メモリ領域を獲得しました。Enterキーを押すと1秒に10MiBづつ、合計100MiBの新規メモリ領域にアクセスします:");
@@ -50,5 +51,4 @@ fn main() {
         chrono::Utc::now().format("%H:%M:%S")
     );
     let _ = io::stdin().read(&mut [0u8]).expect("waiting enter failed");
-
 }
