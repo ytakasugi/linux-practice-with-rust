@@ -9,7 +9,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         .create(true)
         .read(true)
         .write(true)
-        .open("out.txt")?;
+        .open("out.csv")?;
 
     let mut i = 2.0;
     while i <= 16.0 {
@@ -38,7 +38,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             }
         }
         let end = time::Instant::now().duration_since(start).as_nanos();
-        writeln!(&mut file, "{}\t{}", i, (NACCESS as f64 / end as f64))?;
+        writeln!(&mut file, "{},{}", i, (NACCESS as f64 / end as f64))?;
         i += 0.25;
     }
     Ok(())
