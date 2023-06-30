@@ -1,8 +1,8 @@
 use nix::libc::size_t;
 use nix::sys::mman::{mmap, MapFlags, ProtFlags};
 use std::io::{self, Read};
-use std::num::NonZeroUsize;
 use std::os::raw::c_int;
+use std::ptr;
 
 fn main() {
     const ALLOC_SIZE: size_t = 100 * 1024 * 1024;
@@ -15,8 +15,8 @@ fn main() {
 
     let mut memregion = unsafe {
         mmap(
-            NonZeroUsize::new(0),
-            NonZeroUsize::new(ALLOC_SIZE).unwrap(),
+            ptr::null_mut(),
+            ALLOC_SIZE,
             ProtFlags::PROT_READ | ProtFlags::PROT_WRITE,
             MapFlags::MAP_ANON | MapFlags::MAP_PRIVATE,
             -1,

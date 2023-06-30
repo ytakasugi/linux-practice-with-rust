@@ -4,8 +4,8 @@ use nix::sys::mman::MapFlags;
 use nix::sys::mman::ProtFlags;
 use nix::unistd::getpid;
 use std::io::{self, Write};
-use std::num::NonZeroUsize;
 use std::process;
+use std::ptr;
 
 fn main() {
     const ALLOC_SIZE: size_t = 1024 * 1024 * 1024;
@@ -27,9 +27,9 @@ fn main() {
     let data = unsafe {
         mmap(
             // 大した意味なし、0でいい
-            NonZeroUsize::new(0),
+            ptr::null_mut(),
             // メモリにマップするサイズ
-            NonZeroUsize::new(ALLOC_SIZE).unwrap(),
+            ALLOC_SIZE,
             // メモリ保護の指定
             ProtFlags::PROT_READ | ProtFlags::PROT_WRITE,
             // マップされたオブジェクトのタイプ、マップ時のオプション、
