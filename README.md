@@ -9,6 +9,7 @@
 * 試して理解 Linuxのしくみ
   * [1章〜4章](https://zenn.dev/elvis/scraps/9ddd9a012c1621)
   * [5章〜8章](https://zenn.dev/elvis/scraps/3a022eafa4cb8b)
+* [Linuxのmanコマンドで表示される()内の数字（セクション番号）について](https://qiita.com/yasushi-jp/items/ca6a32fa51f9c7a5c1e9)
 
 ## Execute
 
