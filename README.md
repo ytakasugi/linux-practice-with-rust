@@ -10,6 +10,11 @@
   * [1章〜4章](https://zenn.dev/elvis/scraps/9ddd9a012c1621)
   * [5章〜8章](https://zenn.dev/elvis/scraps/3a022eafa4cb8b)
 * [Linuxのmanコマンドで表示される()内の数字（セクション番号）について](https://qiita.com/yasushi-jp/items/ca6a32fa51f9c7a5c1e9)
+* [SIer だけど技術やりたいブログ](https://www.kimullaa.com/categories/linux/)
+    * [Linux メモリ管理 徹底入門(プロセス編)](https://www.kimullaa.com/posts/201912010532/)
+    * [Linux システムコール 徹底入門](https://www.kimullaa.com/posts/202001051012/)
+    * [Linux メモリ管理 徹底入門(カーネル編)](https://www.kimullaa.com/posts/202002160657/)
+    * [Linux プロセス管理を理解したい](https://www.kimullaa.com/posts/202004070247/)
 
 ## Execute
 
